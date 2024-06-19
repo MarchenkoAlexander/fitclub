@@ -8,12 +8,21 @@ const Join = () => {
     const sendEmail = e => {
         e.preventDefault();
 
-        emailjs.sendForm('service_x5qdu0i', 'template_onhr08h', form.current, 'giDR6y694fdkp_ciQ')
-            .then(result => {
-                console.log(result.text);
-            }, error => {
-                console.log(error.text);
-            })
+        // emailjs.sendForm('service_x5qdu0i', 'template_onhr08h', form.current, 'giDR6y694fdkp_ciQ')
+        //     .then(result => {
+        //         console.log(result.text);
+        //     }, error => {
+        //         console.log(error.text);
+        //     })
+
+        emailjs.sendForm('service_x5qdu0i', 'template_lbcv16i', form.current, 'giDR6y694fdkp_ciQ').then(
+            (response) => {
+                console.log('SUCCESS!', response.status, response.text);
+            },
+            (error) => {
+                console.log('FAILED...', error);
+            },
+        );
     }
 
     return (
